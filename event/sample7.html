@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+    $(function() {
+        //$(":input[name='username']").val("홍길동");
+        //alert('성별 : ' +  $(":radio:checked").val() );
+        //alert('지역 : ' + $('select[name=loc]').val() );
+        //alert('지역명 : ' + $('select[name=loc] option:selected').text() );
+        //alert('기술 : ' + $(':checkbox[name=tech]:checked').val());
+        
+        //$(":radio[name='gender']").prop("checked", true);
+        //$("select[name='loc']").val("B");
+        //$(":checkbox[name='tech']:eq(2)").prop("checked", true);
+        //$(":checkbox[name='tech'][value='R']").prop("checked", true);
+        
+        // 이름입력란에 이름을 입력하지 않으면 다음 입력이 진행되지 않게 하자
+        $(":input[name='username']").blur(function() {
+            if ($.trim($(this).val()) == '') {
+                this.focus();
+            }
+        });
+        
+        $("form").submit(function() {
+            if ( $(":input[name='username']").val() == '') {
+                alert("이름은 필수입력값입니다.");
+                return false;
+            }
+            
+            if ( $("select").val() == "") {
+                alert("지역을 선택하세요.");
+                return false;
+            }
+            
+            if ( $(":checkbox[name='tech']:checked").length == 0 ) {
+                alert("기술 항목은 반드시 1개 이상 체크해야 합니다.");
+                return false;
+            }
+            
+            if ( $("textarea[name='intro']").val() == '') {
+                alert("자기소개는 필수입력 사항입니다.");
+                return false;
+            }
+            
+            return true;
+        })
+    })
+    </script>
+</head>
+<body>
+    <h1>form 이벤트</h1>
+    
+    <form>
+        이름 : <input type="text" name="username" /> <br />
+        성별 : <input type="radio" name="gender" value="M" checked>남자 
+              <input type="radio" name="gender" value="F">여자 <br />
+        지역 : <select name="loc">
+                    <option value="" selected> 지역을 선택하세요</option>
+                    <option value="S"> 서울</option>
+                    <option value="K"> 경기</option>
+                    <option value="I"> 인천</option>
+                    <option value="B"> 부산</option>
+              </select><br />
+        기술 : <input type="checkbox" name="tech" value="C" checked>C
+               <input type="checkbox" name="tech" value="J">Java
+               <input type="checkbox" name="tech" value="P">Python
+               <input type="checkbox" name="tech" value="R">Ruby
+               <input type="checkbox" name="tech" value="L">Lisp><br />
+        소개 : <textarea name="intro"></textarea><br />
+        <input type="reset" value="취소"/>
+        <input type="submit" value="저장" />
+    </form>
+</body>
+</html>

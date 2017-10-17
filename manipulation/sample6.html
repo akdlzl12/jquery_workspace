@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            padding: 5px;
+            border: 1px solid black;
+            height: 150px;
+            width: 300px;
+        }
+        
+        span{
+            display: inline-block;
+            padding: 2px;
+            width: 100px;
+            border: 1px solid green;
+            text-align: center;
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+    
+    <script>
+        $(function() {
+            
+            $("span").click(function() {
+                $("span").removeClass();        
+                $(this).addClass("highlight");
+            })
+            
+            $("#btn-up").click(function() {
+                $("#box-1").append($("span.highlight"));
+                $("span").removeClass();
+            })
+            
+            $("#btn-down").click(function() {
+                $("#box-2").append($("span.highlight"));
+                $("span").removeClass();
+            })
+            
+            
+            $("#btn-add").click(function() {
+                var isExist = false;
+                var name = $("#name-field").val();
+                $("span").each(function() {
+                    if(name == $(this).text()) {
+                       isExist = true;
+                    }
+                })
+                
+                if(!isExist) {
+                   $("#box-1").append("<span>"+name+"</span>");
+                }
+                
+            })
+            
+        }) 
+    </script>
+</head>
+<body>
+    <h1>사원 리스트</h1>
+    
+    <p>
+        사원명: <input type="text" id="name-field"> <button id="btn-add">등록</button>
+    </p>
+    
+    <div id="box-1">
+        <span class="highlight">이순신</span>
+        <span>김유신</span>
+        <span>강감찬</span>
+        <span>유관순</span>
+        <span>권율</span>
+    </div>
+    
+    <p>
+        <button id="btn-up">Up</button>
+        <button id="btn-down">Down</button>
+    </p>
+    
+    <div id="box-2">
+        
+    </div>
+</body>
+</html>

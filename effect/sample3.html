@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#btn-fade-in").click(function() {
+                $("p").fadeIn();
+            })
+            $("#btn-fade-out").click(function() {
+                $("p").fadeOut();
+            })
+            $("#btn-fade-toggle").click(function() {
+                $("p").fadeToggle();
+            })
+            
+            $("#btn-slide-down").click(function() {
+                $("p").slideDown();
+            })
+            $("#btn-slide-up").click(function() {
+                $("p").slideUp();
+            })
+            $("#btn-slide-toggle").click(function() {
+                $("p").slideToggle();
+            })
+        })
+    </script>
+    <style>
+        p {
+            background-color: coral;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn-fade-in">fadeIn</button>
+        <button id="btn-fade-out">fadeOut</button>
+        <button id="btn-fade-toggle">fadeToggle</button>
+        
+        <button id="btn-slide-down">slideDown</button>
+        <button id="btn-slide-up">slideUp</button>
+        <button id="btn-slide-toggle">slideToggle</button>
+    </div>
+    
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+</body>
+</html>

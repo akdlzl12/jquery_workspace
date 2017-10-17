@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            /*$("tbody tr").has(":contains(computer)").css("background-color", "pink");
+            $("tbody tr").has(":contains(notebook)").css("background-color", "yellow");*/
+            
+            $("tbody tr").has(":contains(computer)").css("background-color", "pink").end().has(":contains(notebook)").css("background-color", "yellow");
+        })
+    </script>
+</head>
+<body>
+    <h1>end 함수</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>상품명</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>computer</td>
+                <td>삼성 센스</td>
+                <td>120만원</td>
+            </tr>
+            <tr>
+                <td>notebook</td>
+                <td>LG 그램</td>
+                <td>100만원</td>
+            </tr>
+            <tr>
+                <td>notebook</td>
+                <td>apple 맥북 프로</td>
+                <td>300만원</td>
+            </tr>
+            <tr>
+                <td>computer</td>
+                <td>애플 아이맥</td>
+                <td>230만원</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

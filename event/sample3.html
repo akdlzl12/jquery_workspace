@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        $(function() {
+            $("#box1").dblclick(function() {
+                alert("box1 - dbclick");
+            })
+            
+            $("#box2").click(function() {
+                alert("box2 - click");
+            })
+            
+            $("#box3").click(function(e) {
+                //e.stopPropagation();    // 부모 엘리먼트로 이벤트가 전파되는 것을 방지한다.
+                e.stopImmediatePropagation();
+                alert("box3 - click1");
+            })
+            
+            $("#box3").click(function() {
+                alert("box3 - click2");
+            })
+        })
+    </script>
+</head>
+<body>
+   <h1>이벤트 버블링</h1>
+   <div id="box1">
+      #box1
+       <div id="box2">
+          #box2
+           <div id="box3">
+               #box3
+           </div>
+       </div>
+   </div>
+    
+</body>
+</html>

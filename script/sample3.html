@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function Calculator(a, b) {
+            this.a = a;
+            this.b = b;
+            
+        }
+        
+        Calculator.prototype.plus  = function() {
+            return this.a + this.b;
+        }
+        
+        Calculator.prototype.minus  = function() {
+            return this.a - this.b;
+        }
+        
+        var c1 = new Calculator(10, 2);
+        var c2 = new Calculator(10, 4);
+        
+        console.log(c1.plus());
+        console.log(c2.minus());
+        
+        Calculator.prototype.multiple  = function() {
+            return this.a * this.b;
+        }
+        
+        console.log(c2.multiple());
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

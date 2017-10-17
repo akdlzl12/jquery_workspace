@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 3px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $("button").click(function(event) {
+                //$(this).parent().remove();
+                //$(event.target).parents("div").remove();
+                var id = $(this).attr("id").replace("btn","project");
+                $("#" + id).remove()
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="project-1">
+        <h3>경력사항1</h3>
+        <p>국방부 프로젝트 수행</p>
+        <button id="btn-1">삭제</button>
+    </div>
+    <div id="project-2">
+        <h3>경력사항2</h3>
+        <p>서울시청 프로젝트 수행</p>
+        <button id="btn-2">삭제</button>
+    </div>
+    <div id="project-3">
+        <h3>경력사항3</h3>
+        <p>교보문고 프로젝트 수행</p>
+        <button id="btn-3">삭제</button>
+    </div>
+    
+    
+    
+</body>
+</html>

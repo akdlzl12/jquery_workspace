@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        img {
+            margin: 5px;
+            padding: 3px;
+            opacity: 0.5;
+        }
+    </style>
+    <script>
+        $(function() {
+            /*$("img").mouseenter(function() {
+                $(this).css("opacity", "1.0");
+            });
+            $("img").mouseleave(function() {
+                $(this).css("opacity", "0.5");
+            })*/
+            
+            $("img").hover(function() {
+                $(this).css("opacity", "1.0");
+            }, function() {
+                $(this).css("opacity", "0.5");
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>mouseenter, mouseave, hover</h1>
+    
+    <div>
+       <img src="images/cat.jpg" alt=""> 
+       <img src="images/cat2.jpg" alt=""> 
+       <img src="images/cat3.jpg" alt=""> 
+       <img src="images/siva1.jpg" alt=""> 
+       <img src="images/siva2.jpg" alt=""> 
+    </div>
+</body>
+</html>

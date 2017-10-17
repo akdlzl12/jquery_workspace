@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>셀렉터 연습</h1>
+    
+    <div id="first-box">
+        <h3>영화 예매순위</h3>
+        <ol>
+            <li>택시운전사</li>
+            <li>킹스맨</li>
+            <li>어벤져스</li>
+        </ol>
+    </div>
+    
+    <div id="second-box">
+        <h3>개봉예정 영화</h3>
+        <ul>
+            <li>어벤져스4</li>
+            <li>토르</li>
+            <li>슈퍼맨</li>
+            <li>캡틴마블</li>
+        </ul>
+    </div>
+    
+    <div>
+        찾아보기: <input type="text" id="keyword-box"><button id="btn">검색</button>
+    </div>
+    
+    <script>
+        // h1태그의 내용을 : 'jQuery 선택자 연습'으로 변경하시오
+        $("h1").text("jQuery 선택자 연습");
+        // 현재 개봉중인 영화 중 예매순위가 가장 높은 영화의 제목을 빨간색으로 변경하기
+        $("#first-box ol li:first").css("color", "red");
+        // 현재 개봉중인 영화 중에서 예매순위가 가장 낮은 영화의 제목을 읽어오기
+        var title = $("#first-box ol li:last").text();
+        console.log(title);
+        // 검색버튼을 클릭하면 입력창에 입력한 영화제목을 포함하고 있는 엘리먼트를 찾아서 핑크색으로 바꾸기
+        $("#btn").click(function() {
+           var inputTitle = $("#keyword-box").val();
+           var moviesRankTitle = $("#first-box ol li");
+             
+             
+        });
+    </script>
+</body>
+</html>

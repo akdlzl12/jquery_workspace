@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $("#btn-add").click(function(){
+                $("#menu-list").empty();
+                var data = [
+                                {no:100, name:"떡볶이", price:3000}, 
+                                {no:200, name:"라면", price:3500}, 
+                                {no:300, name:"어묵", price:3000},
+                                {no:400, name:"김밥", price:2000},
+                                {no:500, name:"볶음밥", price:6000}
+                           ];
+                
+                $.each(data, function() {
+                    $("#menu-list").append("<li id='no-"+this.no+"'>"+this.name+" ("+this.price+"원)</li>")
+                })
+                
+                $("#menu-list").append("<li>"+$("#name-field").val()+"</li>");    
+            });
+            
+            $("#menu-list").on("click", "li", function() {
+                var menuNo = $(this).attr("id").replace("no-", "");
+                alert(menuNo);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>이벤트 위임하기</h1>
+    
+    <h3>메뉴리스트</h3>
+    <p>
+        메뉴이름: <input type="text" id="name-field"><button id="btn-add">추가</button>
+    </p>
+    <ul id="menu-list">
+        
+        
+    </ul>
+</body>
+</html>

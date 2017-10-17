@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid black;
+            height: 150px;
+        }
+        span {
+            display: inline-block;
+            width: 100px;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid black;
+            text-align: center;
+            
+        }
+    </style>
+    <script>
+        $(function() {
+            
+            var draggedId;
+            
+            $("span").on("dragstart", function() {
+                draggedId = $(this).attr("id");
+            });
+            
+            $("box2").on("dragover", function(e) {
+                e.preventDefault();
+                
+            });
+            
+            $("box2").on("drop", function(e) {
+                e.preventDefault();
+                $(this).append($("#"+draggedId));
+            });
+        });
+    </script>
+</head>
+<body>
+   
+    <h1>drag and drop</h1>   
+       
+    <div id="box1">
+        <span draggable="true" id="emp-1">이순신</span>
+        <span draggable="true" id="emp-2">김유신</span>
+        <span draggable="true" id="emp-3">강감찬</span>
+        <span draggable="true" id="emp-4">김구</span>
+    </div>
+    
+    <div id="box2">
+        
+    </div>
+</body>
+</html>

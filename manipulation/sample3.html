@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            padding: 5px;
+            border: 1px solid black;
+            
+        }    
+    </style>
+    <script>
+        $(function() {
+            /*$("div").before("<p>before</p>");
+            $("div").after("<p>after</p>");
+            
+            $("div").prepend("<p>prepend</p>");
+            $("div").append("<p>append</p>");
+            $("div").append("<p>append2</p>");
+            $("div").append("<p>append3</p>");
+            */            
+            //$("div").empty();
+            //$("div").remove();
+            
+            var $p = $("#box-1 p");
+            var $pClone = $p.clone();
+            $("#box-2").append($pClone);
+            
+        })
+    </script>
+</head>
+<body>
+    <h1>DOM 조작하기</h1>
+    
+    <div id="box-1">
+        <p>첫번째 p</p>
+        <p>두번째 p</p>
+    </div>
+    
+    <div id="box-2">
+        
+    </div>
+</body>
+</html>

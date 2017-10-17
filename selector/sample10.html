@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body, div{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        $(function() {
+            $("p:first-child").css("color", "red");
+            $("p:last-child").css("color", "green");  
+            $("p:nth-child(5)").css("text-decoration", "underline");
+            $("p:only-child").css("color", "orange");
+        });
+    </script> 
+</head>
+<body>
+    <h1>자식요소 필터 선택자</h1>
+    
+    <div>
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+        <p>p4</p>
+        <p>p5</p>
+    </div>
+    <div>
+        <p>p6</p>
+        <p>p7</p>
+        <p>p8</p>
+    </div>
+    
+    <div>
+        <p>p10</p>
+        <span>444</span>
+    </div>
+    
+    <p>p11</p>
+    <p>p12</p>
+    <p>p13</p>
+    <p>p14</p>
+    
+   
+</body>
+
+</html>

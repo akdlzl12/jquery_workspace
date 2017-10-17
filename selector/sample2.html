@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>엘리먼트의 컨텐츠 조작하기</h1>
+
+    <h3>text() 함수</h3>
+            
+    <p>jQuery selector는 정말 강력하다</p>
+    
+    <p>홍길동의 성적은 국어: <span id="kor">40</span>점 수학: <span id="math">30</span>점 영어: <span id="eng">60</span>점입니다.</p>
+    
+    <script>
+        var kor = $("#kor").text();
+        var math = $("#math").text();
+        var eng = $("#eng").text();
+        
+        var total = parseInt(kor) + parseInt(math) + parseInt(eng);
+        
+        
+        $("h1").text("선택된 엘리먼트의 텍스트 컨텐츠 바꾸기")
+        
+    </script>
+</body>
+</html>

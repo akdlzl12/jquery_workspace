@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>엘리먼트의 컨텐츠 조작하기</h1>
+    
+    <h3>html() 함수</h3>
+    
+    <ul id="fruit-list">
+        <li>사과</li>
+        <li>오렌지</li>
+    </ul>    
+    
+    <script>
+        var html = $("#fruit-list").html();
+        
+        var htmlContents = "";
+        htmlContents += "<li>바나나</li>";
+        htmlContents += "<li>망고</li>";
+        htmlContents += "<li>파인애플</li>";
+        htmlContents += "<li>딸기</li>";
+        
+        $("#fruit-list li:nth-child(2)").html(htmlContents);
+    </script>
+</body>
+</html>

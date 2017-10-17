@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $("#best-drink").prev().css("color", "red");
+            $("#best-drink").next().css("color", "orange");
+            $("#best-drink").siblings().css("font-size", "20px");
+            
+            $("#best-drink").parent().prev().css("color", "green");
+            console.log($("#best-drink").parents('div'));
+            
+            $("ol").children().css("text-decoration", "underline");
+        })
+    </script>
+</head>
+<body>
+    <h1>엘리먼트 옮기기</h1>
+    
+    <div id="box-1">
+        <h3>음료 매출 순위</h3>
+        <ol>
+            <li>따뜻한 커피</li>
+            <li id="best-drink">따뜻한 율무차</li>
+            <li>따뜻한 생강차</li>
+            <li>따뜻한 대추차</li>
+        </ol>
+        <p>날씨가 추워져서 따뜻한 음료의 판매량이 증가하고 있음</p>
+    </div>
+    <div id="box-2">
+           
+    </div>
+</body>
+</html>

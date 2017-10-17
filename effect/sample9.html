@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("button").click(function() {
+                $("h1").animate({
+                    opacity: 1
+                }, {
+                    duartion:2000,
+                    step:function(now, fx) {
+                        $("p").css("opacity", now/1.5);
+                        $("div").css("opacity", now/3);
+                    }
+                })
+            })
+        })
+    </script>
+    <style>
+        h1,p,div {
+            background-color: coral;
+        }
+        
+       
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button>go</button>
+    
+    <h1>aaa</h1>
+    <p>bbb</p>
+    <div>ccc</div>
+</body>
+</html>

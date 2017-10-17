@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $("div").hide().filter(":first").show();
+            
+            $("a").click(function(e) {
+                e.preventDefault();
+                var id = $(this).attr("id").replace("tab", "box");
+                $("div").hide().filter("#"+id).show();
+            })
+        })
+    </script>
+</head>
+<body>
+   <h1>기본 동작 방해하기</h1>
+   
+   <ul>
+       <li><a href="#" id="tab1">박스1</a></li>
+       <li><a href="#" id="tab2">박스2</a></li>
+       <li><a href="#" id="tab3">박스3</a></li>
+   </ul>
+   <div id="box1">
+       첫번째 박스의 내용이 표시됩니다.
+   </div>
+   <div id="box2">
+       두번째 박스의 내용이 표시됩니다.
+   </div>
+   <div id="box3">
+       세번째 박스의 내용이 표시됩니다.
+   </div>
+</body>
+</html>

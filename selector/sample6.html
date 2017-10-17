@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>엘리먼트의 속성 조작</h1>
+    
+    <h3>attr() 함수</h3>
+    
+    <p id="x" title="인사말">안녕하세염</p>
+    
+    <script>
+        var idValue = $("p").attr("id");
+        console.log(idValue);
+        
+        var titleValue = $("p").attr("title");
+        console.log(titleValue);
+        
+        var titleValue = $("p").attr("class", "xxxx");
+        
+    </script>
+    
+</body>
+</html>

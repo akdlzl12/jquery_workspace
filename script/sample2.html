@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // 객체 생성하기 - 생성자 함수 사용하기
+        function User(n, p, e) {
+            this.name = n;
+            this.phone = p;
+            this.email = e;
+            this.getName = function() {
+                return this.name;
+            };
+            this.getPhone = function() {
+                return this.phone;
+            };
+            this.getEmail = function() {
+                return this.email;
+            };
+        }
+        
+        var user1 = new User("홍길동", "010-1111-2222", "hong@gmail.com");
+        var user2 = new User("김유신", "010-2222-3333", "kim@gmail.com");
+        
+        console.log(user1.getName())
+        console.log(user2)
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

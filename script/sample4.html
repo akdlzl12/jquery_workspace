@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        Date.prototype.formatDate = function() {
+            var text = "";
+            text += this.getFullYear() + "-";
+            text += (this.getMonth() + 1) + "-";
+            text += this.getDate();
+            return text;
+        }
+        
+        String.prototype.trimTextByLength = function(len) {
+            if(this.length <= len) {
+               return this.toString();
+            }
+            
+            return this.substr(0, len) + "...";
+        }
+        var today = new Date();
+        console.log(today.formatDate());
+        
+        console.log("aaa vbbb ddd www qqq".trimTextByLength(10));
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $("table button").on('click', function() {
+                $(this).parents("tr").hide();
+            })
+            
+            $("#btn-ck").click(function() {
+                $("input[name=ck]:checked").parents("tr").remove();
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>전화번호</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>010-1111-1111</td>
+                <td><button>X</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>2</td>
+                <td>강감찬</td>
+                <td>010-2222-2222</td>
+                <td><button>X</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>3</td>
+                <td>유관순</td>
+                <td>010-3333-3333</td>
+                <td><button>X</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>4</td>
+                <td>권율</td>
+                <td>010-5555-5555</td>
+                <td><button>X</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button id="btn-ck">선택삭제</button>
+    </div>
+</body>
+</html>

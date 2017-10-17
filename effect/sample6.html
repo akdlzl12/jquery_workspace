@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#btn-right").click(function() {
+                $("div").stop().animate({left:"-=100px"}, "slow");
+            })
+            
+            $("#btn-left").click(function() {
+                $("div").stop().animate({left:"+=100px"}, "slow");
+            })
+        })
+    </script>
+    <style>
+        div {
+            position: absolute;
+            background-color: coral;
+            width: 50px;
+            height: 50px;
+            left: 100px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <button id="btn-right">right</button>
+        <button id="btn-left">left</button>
+    </p>
+    
+    <div></div>
+</body>
+</html>

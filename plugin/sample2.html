@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .on {
+            font-weight: bolder;
+            background-color: yellow;
+            
+        }
+        
+        .off {
+            font-weight: normal;
+            background-color: white;
+        }
+    </style>
+    <script src="my-plugin1.js"></script>
+    <script>
+        $(function() {
+            $("#btn1").click(function() {
+                $("p").swapClass("on", "off");
+            })
+            
+            $("#btn2").click(function() {
+                $("p").swapClass("off", "on");
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>사용자 정의 jQuery 객체 메소드</h1>
+    
+    <div>
+        <button id="btn1">on -> off</button>
+        <button id="btn2">off -> on</button>
+    </div>
+    
+    <p class="on">swapClass() 메소드...</p>
+</body>
+</html>

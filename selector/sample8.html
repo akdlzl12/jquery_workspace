@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>필터 선택자</h1>
+    
+    <p>나는 p다</p>
+    <p>나는 p다</p>
+    <p>나는 p다</p>
+    <p>나는 p다</p>
+    <p>나는 p다</p>
+    <p>나는 p다</p>
+    <p>나는 p다</p>
+    
+    <script>
+        $("p:first").css("color", "red");
+        $("p:last").css("color", "green");
+        $("p:eq(3)").css("color", "blue");
+        $("p:gt(3)").css("font-size", "10px");
+        $("p:lt(3)").css("font-size", "20px");
+        $("p:odd").css("border", "1px solid black");
+        $("p:not(:first)").css("text-decoration", "underline");
+        
+    </script>
+</body>
+</html>

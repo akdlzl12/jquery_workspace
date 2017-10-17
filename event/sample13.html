@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div.book-box {
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            width: 607px;
+            height: 350px;
+            border: 1px solid black;
+        }
+        div.book {
+            float: left;
+            padding: 2px;
+            margin:5px;
+            width:100px;
+            border: 1px solid silver;
+            text-align: center;
+        }
+        img {
+            height: 115px;
+            width: 96px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".book").prop("draggable", true);
+            
+            
+            var draggedImageIndex;
+            var draggedImageIndex1;
+            
+            var ds = 0;
+            $("#box-1 .book").on("dragstart", function(e) {
+                
+                draggedImageIndex = $(this).index();
+                console.log($(this).index() + "  111");
+            })
+            
+            $("#box-2").on("dragstart", ".book", function(e) {
+                
+                draggedImageIndex1 = $(this).index();
+                console.log($(this).index() + "  222");
+            })
+            
+           
+            
+            $("html").on("selectstart", function() {
+                return false;
+            })
+            
+            /*$("img").on("dragend", function(e) {
+                $(this).prop("draggable", false);
+            })*/
+            
+            $("#box-2").on("dragover", function(e) {
+                e.preventDefault();
+                
+                
+            })
+            
+            $("#box-1").on("dragover", function(e) {
+                e.preventDefault();
+                
+            })
+            
+            $("#box-2").on("drop", function(e) {
+                e.preventDefault();
+                var result = 0;
+                var $img = $("#box-1 .book:eq("+draggedImageIndex+")");
+                $img.attr("draggable", false);
+                
+                $(this).append($img);
+                
+                $(this).find("span").each(function() {
+                    result += parseInt($(this).text());
+                })
+                
+                $("input[name=orderprice]").val(result);
+                
+            })
+            
+            $("#box-1").on("drop", function(e) {
+                e.preventDefault();
+                
+                var $img = $("#box-2 .book:eq("+draggedImageIndex+")");
+                $img.attr("draggable", false);
+                
+                $(this).append($img);
+                var result = 0;
+                
+                
+                $("#box-2").find("span").each(function() {
+                    result += parseInt($(this).text());
+                })
+                
+                $("input[name=orderprice]").val(result);
+            })
+            
+            
+            
+            
+        })
+    </script>
+</head>
+<body>
+    
+    <div class="book-box" id="box-1">
+        <div class="book">
+            <img src="images/cat.jpg">
+            <div><small>82년생 김지영</small></div>
+            <div style="text-align: right;"><span class="money">16000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="images/cat2.jpg">
+            <div><small>살인자의 기억법</small></div>
+            <div style="text-align: right;"><span class="money">20000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="images/cat3.jpg">
+            <div><small>주진우 추격기</small></div>
+            <div style="text-align: right;"><span class="money">26000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="images/siva1.jpg">
+            <div><small>언어의 온도</small></div>
+            <div style="text-align: right;"><span class="money">21000</span> 원</div>
+        </div>
+        <div class="book">
+            <img src="images/siva2.jpg">
+            <div><small>바깥은 여름</small></div>
+            <div style="text-align: right;"><span class="money">14000</span> 원</div>
+        </div>
+    </div>
+    
+    <div class="book-box" id="box-2">
+    
+    </div>
+    
+    <div style="clear: both;">
+        구매가격: <input type="text" name="orderprice" /> 원
+    </div>
+</body>
+</html>

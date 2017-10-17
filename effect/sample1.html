@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#btn-hide").click(function() {
+                //$("p").hide();
+                //$("p").hide("fast");
+                //$("p").hide(2000);
+                $("p").hide(2000);
+            })
+            
+            $("#btn-show").click(function() {
+                //$("p").show();
+                //$("p").show("slow");
+                //$("p").show(2000);
+                $("p").show(2000, function() {
+                    $(this).css("color", "white");
+                });
+            })
+            
+            $("#btn-toggle").click(function() {
+                $("p").toggle("fast");
+            }) 
+        })
+    </script>
+    <style>
+        p:first-child {
+            background-color: coral;
+        }
+        
+        p:last-child {
+            background-color: darkgray;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn-show">show</button>
+        <button id="btn-hide">hide</button>
+        <button id="btn-toggle">toggle</button>
+    </div>
+    
+    <div>
+        <p style="display: none">
+            첼시는 28일 오전 3시 45분(한국시간) 완다 메트로폴리타노에서 열린 2017-18 유럽축구연맹(UEFA) 챔피언스리그(UCL) C조 2라운드 아틀레티코 마드리드 원정에서 2-1 역전승를 거뒀다. 이로써 첼시는 승점 6점으로 C조 선두로 올라섰고, 아틀레티코는 승점 1점으로 3위를 유지했다.
+            이 경기는 코스타 더비로도 불렸다. 코스타가 최근 첼시를 떠나 아틀레티코로 이적했기 때문이다. 물론 그는 이적시장이 다시 열리는 1월까지 뛰지 못했고, 관중석에서 경기를 지켜볼 수밖에 없었다.
+        </p>
+    
+        <p>
+            첼시는 28일 오전 3시 45분(한국시간) 완다 메트로폴리타노에서 열린 2017-18 유럽축구연맹(UEFA) 챔피언스리그(UCL) C조 2라운드 아틀레티코 마드리드 원정에서 2-1 역전승를 거뒀다. 이로써 첼시는 승점 6점으로 C조 선두로 올라섰고, 아틀레티코는 승점 1점으로 3위를 유지했다.
+            이 경기는 코스타 더비로도 불렸다. 코스타가 최근 첼시를 떠나 아틀레티코로 이적했기 때문이다. 물론 그는 이적시장이 다시 열리는 1월까지 뛰지 못했고, 관중석에서 경기를 지켜볼 수밖에 없었다.
+        </p>
+    </div>
+</body>
+</html>

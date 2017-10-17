@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#btn-up").click(function() {
+                
+                $("this").prop("disabled", true).next().prop("disabled", false);
+                
+                $("p:eq(0)").slideUp();
+                $("p:eq(1)").slideUp();
+                $("p:eq(2)").slideUp();
+                $("p:eq(3)").slideUp();
+                $("p:eq(4)").slideUp();
+            })
+            
+            $("#btn-down").click(function() {
+                
+                $("this").prop("disabled", true).prev().prop("disabled", false);
+                
+                $("p:eq(0)").slideDown();
+                $("p:eq(1)").slideDown();
+                $("p:eq(2)").slideDown();
+                $("p:eq(3)").slideDown();
+                $("p:eq(4)").slideDown();
+            })
+        })
+    </script>
+    <style>
+        p {
+            background-color: coral;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn-up">up</button>
+        <button id="btn-down" disabled>down</button>
+    </div>
+    
+    <div>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   <p>10</p>
+   <p>30</p>
+    
+    
+    <script>
+        var pList = document.getElementsByTagName("p");
+        
+        function each(fn) {
+            for(var i=0; i < pList.length; i++) {
+                fn.call(pList[i], i, pList[i]);
+            }
+        }
+        
+        each(function(index, item) {
+            console.log(this);
+            console.log(index);
+            console.log(item);
+        })
+    </script>
+</body>
+</html>

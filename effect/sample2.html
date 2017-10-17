@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $("#btn-hide-text").click(function() {
+                $("p:last-child").hide("fast", function prevHide() {
+                    $(this).prev().hide("fast", prevHide);
+                });
+            })
+            
+            $("#btn-show-text").click(function() {
+                $("p:first-child").show("fast", function prevHide() {
+                    $(this).next().show("fast", prevHide);
+                });
+            })
+        })
+    </script>
+    <style>
+        p {
+            margin: 3px;
+            background-color: coral;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="btn-hide-text">hide item</button>
+        <button id="btn-show-text">show item</button>
+    </div>
+    
+    <div>
+        <p>영화</p>
+        <p>게임</p>
+        <p>운동</p>
+        <p>도서관</p>
+        <p>노래방</p>
+        <p>극장</p>
+        <p>식당</p>
+        <p>만화</p>
+        <p>PC방</p>
+    </div>
+</body>
+</html>

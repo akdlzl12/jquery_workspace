@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body, div{
+            
+        }
+    </style>
+    <script>
+        $(function() {
+            $("p:contains('김유신')").css("color", "red");
+            $("p:has('strong')").css("color", "red");
+            $("div:empty").html($('div:parent').html());
+            
+        });
+    </script> 
+</head>
+<body>
+    <h1>컨텐츠 필터 선택자</h1>
+    
+    <div>
+        <p>김유신</p>
+        <p><strong>이순신</strong></p>
+        <p>강감찬</p>
+        
+    </div>
+    
+    <div></div>
+   
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $("tbody tr").each(function() {
+                var price = parseInt($(this).find("td").eq(2).text());
+                var quantity = parseInt($(this).find("td").eq(3).text());
+                
+                $(this).find("td:last").append(price * quantity);
+            });
+            
+            $(":checkbox[name=ck]").change(function() {
+                var result = 0;
+                $(":checkbox[name=ck]:checked").each(function() {
+                    result += parseInt($(this).parents("tr").find("td:eq(2)").text());
+                    
+                })
+                    $("tfoot tr td:last").text(result);
+                
+                
+               
+                
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>구매내역</h1>
+    
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>선택</th>
+                <th>제품명</th>
+                <th>가격</th>
+                <th>수량</th>
+                <th>구매가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>노트북</td>
+                <td>100</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>TV</td>
+                <td>50</td>
+                <td>3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>헤드셋</td>
+                <td>30</td>
+                <td>50</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>사운드카드</td>
+                <td>25</td>
+                <td>30</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>모니터</td>
+                <td>35</td>
+                <td>3</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">합계</td>
+                <td></td>
+                
+            </tr>
+        </tfoot>
+    </table>
+    
+</body>
+</html>

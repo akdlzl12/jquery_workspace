@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $("#btn").click(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "data.json",
+                    dataType: "json",
+                    success: function(events) {
+                        var html = "";
+                        $.each(events, function(index, item) {
+                            html += "<tr>";
+                            html += "<td>"+(index+1)+"</td>";
+                            html += "<td>"+item.location+"</td>";
+                            html += "<td>"+item.date+"</td>";
+                            html += "<td>"+item.map+"</td>";
+                            html += "</tr>";
+                        });
+                        
+                        $("tbody").empty().html(html);
+                    }
+                })
+            }) 
+        })
+    </script>
+</head>
+<body>
+    <h1>행사 리스트</h1>
+    <button id="btn">가져오기</button>
+    
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>지역</th>
+                <th>날짜</th>
+                <th>장소</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>

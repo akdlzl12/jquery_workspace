@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        img {
+            margin: 5px;
+            height: 120px;
+            width: 100px;
+            opacity: 0.5;
+        }
+    </style>
+    <script>
+        $(function() {
+            
+            var images = ["images/cat.jpg","images/cat2.jpg","images/cat3.jpg"];
+            
+            $("#btn").click(function() {
+                var image = images.shift();
+                var $img = $("<img src='"+image+"'>").hover(function() {
+                    $(this).css("opacity", 1.0);
+                }, function() {
+                    $(this).css("opacity", 0.5);
+                })
+                
+                $("#box").append($img);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    
+    <button id="btn">추가하기</button>
+</body>
+</html>

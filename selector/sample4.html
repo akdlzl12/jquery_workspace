@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   
+    <h1>폼 요소의 값 조작하기</h1>
+    
+    <h3>val() 함수</h3>
+   
+    <form action="">
+        이름: <input type="text" id="user-name" name="username"><br />
+        메일: <input type="text" id="user-email" name="useremail"><br />
+        지역: <select name="location" id="location">
+                <option value="S" selected>서울</option>
+                <option value="K">경기</option>
+                <option value="I">인천</option>
+             </select>
+        
+        
+    </form>
+    
+    <button id="btn-read">값 읽어오기</button>
+    <button id="btn-write">값 넣기</button>
+    
+    <script>
+        $("#btn-read").click(function() {
+           var name = $("#user-name").val();
+           var email = $("#user-email").val();
+           var location = $("#location").val();
+           var locationValue = $("#location option:selected").text();
+            console.log(name);
+            console.log(email);
+            console.log(location);
+            console.log(locationValue);
+        });
+        
+        $("#btn-write").click(function() {
+            var name = $("#user-name").val("강감찬");
+            var email = $("#user-email").val("이메일");
+            var location = $("#location").val("I");
+        });
+    </script>
+</body>
+</html>

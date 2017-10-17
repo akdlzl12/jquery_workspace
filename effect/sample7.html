@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function() {
+                //$("div").animate({left:"+=100px"}, 1500)
+                $("div:first").animate({left:"+=100px"}, {step:function(now, fx) {$("div:gt(0)").css("left", now);}})
+            })
+        })
+    </script>
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 50px;
+            margin: 5px;
+            padding: 3px;
+            height: 50px;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button>Go</button>
+    </p>
+    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

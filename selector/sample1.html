@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>셀렉터 연습</h1>
+    <h3>기본 셀렉터</h3>
+    
+    <h3>과일리스트</h3>
+    <ul>
+        <li class="item" id="first-item">사과</li>
+        <li class="item">딸기</li>
+        <li class="item active">수박</li>
+        <li class="item">망고</li>
+    </ul>
+    
+    <h3>음료리스트</h3>
+    <ul id="drink-list">
+        <li class="item" id="first-item">콜라</li>
+        <li class="item">사이다</li>
+        <li class="item active">커피</li>
+        <li class="item">쥬스</li>
+    </ul>
+    
+<script>
+    $("*").css("color", "red");
+    $("h1").css("text-decoration", "underline");
+    $("h1, h3").css("color", "orange")
+    $(".active").css("font-size", "3em")
+    $("#drink-list").css("border", "1px solid green")
+    $("#drink-list .active").css("color", "black")
+    $("#drink-list").hide(1000);
+    
+    /*var list = document.querySelectorAll("h1, h3");
+    for(var i=0; i < list.length; i++) {
+        list[i].style.color = "green";
+    }*/
+</script>
+</body>
+</html>

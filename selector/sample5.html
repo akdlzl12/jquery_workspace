@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .on {
+            color: red;
+            font-weight: bolder;
+            font-size: 2em;
+        }
+        
+        .off {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>클래스 조작하기</h1>
+    
+    <h3>addClass(), removeClass(), toggleClass()</h3>
+    
+    <p>여기가 변해여</p>
+    
+    <button id="btn-add-on">on 추가</button>
+    <button id="btn-add-off">off 추가</button>
+    <button id="btn-remove-on">on 제거</button>
+    <button id="btn-remove-off">off 제거</button>
+    <button id="btn-toggle">토글</button>
+    
+<script>
+    $("#btn-add-on").click(function() {
+        $("p").addClass("on");
+    });
+    
+    $("#btn-add-off").click(function() {
+        $("p").addClass("off");
+    });
+    
+    $("#btn-remove-on").click(function() {
+        $("p").removeClass("on");
+    });
+    
+    $("#btn-remove-off").click(function() {
+        $("p").removeClass("off");
+    });
+    
+    $("#btn-toggle").click(function() {
+        $("p").toggleClass("on");
+    });
+</script>    
+</body>
+</html>

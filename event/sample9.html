@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div.box {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            height: 300px;
+        }
+        
+        div.small-box {
+            margin: 5px;
+            padding: 2px;
+            height: 120px;
+            border: 1px solid black;
+            width: 100px;
+            float: left;
+        }
+        
+        img {
+            height: 115px;
+            width: 96px;
+        }
+        
+        
+    </style>
+    
+    <script>
+        $(function() {
+            $("img").prop("draggable", true);
+            
+            
+            var draggedImageIndex;
+            $("img").on("dragstart", function(e) {
+                draggedImageIndex = $(this).index();
+            })
+            
+            $("div").on("selectstart", function() {
+                return false;
+            })
+            
+            /*$("img").on("dragend", function(e) {
+                $(this).prop("draggable", false);
+            })*/
+            
+            $(".small-box").on("dragover", function(e) {
+                console.log(this);
+                if ($(this).find("img").length == 0) {
+                    e.preventDefault();
+                }
+            })
+            
+            $(".small-box").on("drop", function(e) {
+                e.preventDefault();
+                var $img = $("#box1 img:eq("+draggedImageIndex+")");
+                $img.attr("draggable", false);
+                
+                $(this).append($img.clone());
+            })
+            
+            
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+    
+    <div id="box1" class="box">
+        <img src="images/siva1.jpg" alt="">
+        <img src="images/siva2.jpg" alt="">
+        <img src="images/1505112505879_%EA%B3%A0%EC%96%91%EC%9D%B4%EC%82%AC%EC%A7%8411.jpg" alt="">
+        <img src="images/cat.jpg" alt="">
+        <img src="images/cat2.jpg" alt="">
+        <img src="images/cat3.jpg" alt="">
+        <img src="images/siva1.jpg" alt="">
+        <img src="images/siva2.jpg" alt="">
+    </div>
+    
+    <div id="box2" class="box">
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+    </div>
+</body>
+</html>
